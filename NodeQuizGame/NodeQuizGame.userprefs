@@ -1,0 +1,17 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scritpts\BasicObjectPool.cs">
+    <Files>
+      <File FileName="Assets\Scritpts\DataController.cs" Line="18" Column="16" />
+      <File FileName="Assets\Scritpts\RoundData.cs" Line="10" Column="34" />
+      <File FileName="Assets\Scritpts\QuestionData.cs" Line="8" Column="30" />
+      <File FileName="Assets\Scritpts\AnswerData.cs" Line="10" Column="2" />
+      <File FileName="Assets\Scritpts\MenuController.cs" Line="8" Column="8" />
+      <File FileName="Assets\Scritpts\BasicObjectPool.cs" Line="9" Column="26" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
