@@ -1,0 +1,28 @@
+<% include header %>
+
+<h4>
+	Add Riddle
+</h4>
+
+<% include navigation %>
+
+<form method="post" role="form">
+	<div class="form-group">
+		<label for="text">Question</label>
+		<input id="text" type="text" class="form-control" name="text" placeholder="Enter question" required>
+	</div>
+	<div class="form-group">
+		<label for="correct">Correct Answer</label>
+		<input id="correct" type="text" class="form-control" name="correct" placeholder="Enter correct answer" required>
+	</div>
+	<div class="form-group">
+		<label for="wrong1">Wrong Answer 1</label>
+		<input id="wrong1" type="text" class="form-control" name="wrong1" placeholder="Enter wrong answer" required>
+	</div>
+	<div class="form-group">
+		<input type="submit" value="Add Question" class="btn btn-primary">
+		<a href="\" class="btn btn-primary pull-right">Back</a>
+	</div>
+</form>
+
+<% include footer %>

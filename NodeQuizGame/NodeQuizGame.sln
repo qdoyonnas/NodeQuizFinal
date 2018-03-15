@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2015
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NodeQuizGame.CSharp", "NodeQuizGame.CSharp.csproj", "{148FAC09-BEA2-23EA-10C8-AF8849958E1D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NodeQuizGame.CSharp.Editor", "NodeQuizGame.CSharp.Editor.csproj", "{DC3D540B-AD4C-C7CF-FC86-5C7C71AF608B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{148FAC09-BEA2-23EA-10C8-AF8849958E1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{148FAC09-BEA2-23EA-10C8-AF8849958E1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{148FAC09-BEA2-23EA-10C8-AF8849958E1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC3D540B-AD4C-C7CF-FC86-5C7C71AF608B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC3D540B-AD4C-C7CF-FC86-5C7C71AF608B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC3D540B-AD4C-C7CF-FC86-5C7C71AF608B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC3D540B-AD4C-C7CF-FC86-5C7C71AF608B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

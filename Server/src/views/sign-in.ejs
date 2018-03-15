@@ -1,0 +1,20 @@
+<% include header %>
+
+<h4>
+	Sign In
+</h4>
+
+<% include navigation %>
+
+<div class="form-group">
+	<form name="signInForm" action="sign-in" method="post" class="form-group">
+		<label for="username">Username:</label>
+		<input name="username" placeholder="Enter Username" class="form-control" width="200"></br>
+		<label for="password">Password:</label>
+		<input name="password" placeholder="Create Password" class="form-control" width="200"></br>
+		<input type="submit" id="signIn" value="Sign In" class="btn btn-primary">
+		<a href="sign-up" class="btn">Register</a>
+	</form>
+</div>
+
+<% include footer %>

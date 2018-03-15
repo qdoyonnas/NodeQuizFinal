@@ -1,0 +1,26 @@
+<% include header %>
+
+<h4>
+	Riddle Me These...
+</h4>
+
+<% include navigation %>
+
+<% if(entries.length) { %>
+	<% entries.forEach(function(entry) { %>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<b><%= entry.text %></b>
+				<a href="/delete-entry?id=<%= entry._id %>">(delete)</a>
+			</div>
+			<div class="panel-body">
+				C <%= entry.correct %></br>
+				W <%= entry.wrong1 %></br>
+			</div>
+		</div>
+	<% }) %>
+<% } else { %>
+	No Riddles <a href="/add-question">Add a Riddle?</a>
+<% } %>
+
+<% include footer %>

@@ -1,0 +1,85 @@
+.dark-theme {
+	background-color: #444444;
+	color: silver;
+}
+
+hr {
+	color: #dda130;
+	background-color: #dda130;
+	border-color: #dda130;
+}
+
+a {
+	color: #dda130;
+}
+
+a:hover {
+	color: #825f1d;
+}
+
+a:focus {
+	color: #825f1d;
+}
+
+a:active {
+	color: #825f1d;
+}
+
+.content {
+	margin: auto;
+	border-style: solid;
+	border-width: 5px;
+	border-color: black;
+	padding: 5%;
+	width: 80%;
+	background-color: #111111;
+}
+
+.btn-primary {
+	border-color: #000000;
+	background-color: #dda130;
+	color: #000000;
+}
+
+.btn-primary:hover {
+	border-color: #000000;
+	background-color: #825f1d;
+	color: silver;
+}
+
+.btn-primary:active {
+	border-color: #000000;
+	background-color: #825f1d;
+	color: silver;
+}
+
+.btn-primary:focus {
+	border-color: #000000;
+	background-color: #825f1d;
+	color: silver;
+}
+
+.btn-primary:active:focus {
+	border-color: #000000;
+	background-color: #825f1d;
+	color: silver;
+}
+
+.panel {
+	border-color: #000000;
+}
+
+.panel-body {
+	border-color: #000000;
+	background-color: #a8aeaf;
+	color: #444444;
+}
+
+.panel-default>.panel-heading {
+	border-color: #000000;
+	background-color: #7f8587;
+}
+
+.text-muted {
+	color: #666666;
+}
