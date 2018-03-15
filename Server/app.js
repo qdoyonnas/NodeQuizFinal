@@ -1,7 +1,7 @@
 // REQUIRES
 var http = require("http");
 var path = require("path");
-var socketIO = require("socket.io")(process.envPort||5000);
+var socketIO = require("socket.io")(5000);
 var mongoDb = require("mongodb");
 var express = require("express");
 var session = require("express-session");
@@ -93,15 +93,27 @@ socketIO.on("connection", function(socket)
 	socket.on("sendData", function(data)
 	{
 	    console.log("User sending Data");
-	    console.log(data);
+	    console.log(data["questions"]);
 	});
 
 	socket.on("loadData", function()
 	{
 	    console.log("User loading Data");
 
-	    var data = "hello world";
-	    socket.emit("loadData", data);
+	    var data = db.collection("quizdata").find({}, function(error, results) 
+		{
+			if( error ) { throw error; }
+			
+			var arrayData;
+			
+			results.toArray().then(function(data) {
+				arrayData = data;
+			}).then(function() {
+				console.log("Sending Data to user");
+				console.log(arrayData);
+				socket.emit("recieveData", arrayData)
+			});
+		});
 	});
 
 	socket.on("disconnect", function()
@@ -109,7 +121,7 @@ socketIO.on("connection", function(socket)
 		console.log("A user disconnected");
 	});
 });
-console.log("Server Started");
+console.log("Game server started on 5000");
 
 // ROUTES
 app.get("/", function(request, response)

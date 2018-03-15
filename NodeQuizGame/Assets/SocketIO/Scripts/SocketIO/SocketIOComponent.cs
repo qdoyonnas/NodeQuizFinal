@@ -38,6 +38,7 @@ using WebSocketSharp.Net;
 
 namespace SocketIO
 {
+    [ExecuteInEditMode]
 	public class SocketIOComponent : MonoBehaviour
 	{
 		#region Public Properties

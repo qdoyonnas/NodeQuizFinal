@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using SocketIO;
 
+[ExecuteInEditMode]
 public class Network : MonoBehaviour
 {
 	[NonSerialized]
@@ -11,14 +12,10 @@ public class Network : MonoBehaviour
 	[NonSerialized]
 	public DataController dataController;
 
-	void Start ()
+	void Awake ()
 	{
-		socket = GetComponent<SocketIOComponent>();
-		dataController = GetComponent<DataController>();
-		socket.On("open", OnConnected);
-		socket.On("loadData", OnLoadData);
-		socket.On("disconnect", OnDisconnect);
-	}
+        Connect();
+    }
 
 	void OnConnected(SocketIOEvent e)
 	{
@@ -36,53 +33,38 @@ public class Network : MonoBehaviour
 		Debug.Log("User Disonnected");
 	}
 
-	bool Connect()
+	void Connect()
 	{
-		if( socket == null ) {
-			socket = GetComponent<SocketIOComponent>();
+        socket = GetComponent<SocketIOComponent>();
+        dataController = GetComponent<DataController>();
 
-			if( socket == null ) {
-				Debug.Log("Could not find SocketIOComponent");
-				return false;
-			}
-		} 
+        socket.On("open", OnConnected);
+        socket.On("recieveData", OnLoadData);
+        socket.On("disconnect", OnDisconnect);
 
-		if( dataController == null ) {
-			dataController = GetComponent<DataController>();
-
-			if( dataController == null ) {
-				Debug.Log("Could not find Data Controller");
-				return false;
-			}
-		}
-		
-
-		if( !socket.IsConnected ) {
-			Debug.Log("Connecting...");
-			socket.Connect();
-
-			if( !socket.IsConnected ) {
-				Debug.Log("Could not find server");
-				return false;
-			}
-		}
-
-		return true;
+        if( !socket.IsConnected )
+        {
+            socket.Connect();
+        }
 	}
 
 	public void LoadData()
-	{
-		if( !Connect() ) { return; }
+    {
+        if (socket == null) {
+            Connect();
+        }
 
-		Debug.Log("Loading Data");
+        Debug.Log("Loading Data");
 		socket.Emit("loadData");
 	}
 
-	public void SendData()
-	{
-		if( !Connect() ) { return; }
+    public void SendData()
+    {
+        if( socket == null ) {
+            Connect();
+        }
 
-		string jsonObj = JsonUtility.ToJson(dataController.GetCurrentRoundData());
+        string jsonObj = JsonUtility.ToJson(dataController.GetCurrentRoundData());
 
 		Debug.Log("Sending Data");
 		socket.Emit("sendData", new JSONObject(jsonObj));
